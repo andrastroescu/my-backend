@@ -20,7 +20,14 @@ const PORT = process.env.PORT || 7000;
 // Middleware
 app.use(express.json()); // Parse JSON request bodies
 // Allow requests from localhost:3000
-app.use(cors({ origin: 'http://localhost:3000' }));
+const corsOptions = {
+  origin: 'https://hammerhead-app-8vyv7.ondigitalocean.app', // Replace with your frontend domain
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  optionsSuccessStatus: 204
+};
+
+app.use(cors(corsOptions));
 
 // Define routes
 app.get('/', (req, res) => {
