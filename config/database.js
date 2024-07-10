@@ -17,6 +17,11 @@ const sequelize = new Sequelize({
 // Test the database connection
 async function testConnection() {
   try {
+    console.log(sequelize.host);
+    console.log(sequelize.port);
+    console.log(sequelize.username);
+    console.log(sequelize.password);
+    console.log(sequelize.database);
     await sequelize.authenticate();
     console.log('Connection to the database has been established successfully.');
   } catch (error) {
