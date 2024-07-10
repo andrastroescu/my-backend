@@ -2,14 +2,16 @@
 
 const { Sequelize } = require('sequelize');
 
+require('dotenv').config(); // Load environment variables from .env file
+
 // Initialize Sequelize with your MySQL database credentials
 const sequelize = new Sequelize({
   dialect: 'mysql',
-  host: 'localhost', // Change this to your database host
-  port: 3306, // Change this to your database port
-  username: 'root', // Change this to your database username
-  password: 'pass123db', // Change this to your database password
-  database: 'andradb', // Change this to your database name
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  username: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
 });
 
 // Test the database connection
