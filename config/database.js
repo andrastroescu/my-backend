@@ -21,7 +21,7 @@ async function testConnection() {
     console.log(sequelize.port);
     console.log(sequelize.username);
     console.log(sequelize.password);
-    console.log(sequelize.getDatabaseName);
+    console.log(sequelize.getDatabaseName());
     await sequelize.authenticate();
     console.log('Connection to the database has been established successfully.');
   } catch (error) {
