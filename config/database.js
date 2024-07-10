@@ -2,7 +2,7 @@
 
 const { Sequelize } = require('sequelize');
 
-require('dotenv').config(); // Load environment variables from .env file
+//require('dotenv').config(); // Load environment variables from .env file
 
 // Initialize Sequelize with your MySQL database credentials
 const sequelize = new Sequelize({
