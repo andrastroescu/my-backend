@@ -2,7 +2,7 @@
 
 const { Sequelize } = require('sequelize');
 
-//require('dotenv').config(); // Load environment variables from .env file
+require('dotenv').config(); // Load environment variables from .env file
 
 // Initialize Sequelize with your MySQL database credentials
 const sequelize = new Sequelize({
@@ -21,7 +21,7 @@ async function testConnection() {
     console.log(sequelize.port);
     console.log(sequelize.username);
     console.log(sequelize.password);
-    console.log(sequelize.database);
+    console.log(sequelize.getDatabaseName);
     await sequelize.authenticate();
     console.log('Connection to the database has been established successfully.');
   } catch (error) {
