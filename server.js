@@ -6,6 +6,7 @@ const fs = require('fs');
 const path = require('path');
 const authRoutes = require('./routes/auth');
 const crudRoutes = require('./routes/crud');
+const { sequelize, testConnection } = require('./config/database');
 
 require('dotenv').config();
 
@@ -31,6 +32,7 @@ app.use(cors(corsOptions));
 
 // Define routes
 app.get('/', (req, res) => {
+    testConnection();
     res.send('Hello from Express 2!');
 });
 
