@@ -2,16 +2,16 @@
 
 const { Sequelize } = require('sequelize');
 
-//require('dotenv').config(); // Load environment variables from .env file
+require('dotenv').config(); // Load environment variables from .env file
 
 // Initialize Sequelize with your MySQL database credentials
 const sequelize = new Sequelize({
   dialect: 'mysql',
-  host: 'db-mysql-fra1-32128-do-user-16235664-0.a.db.ondigitalocean.com',
-  port: 25060,
-  username: 'doadmin',
-  password: 'AVNS_46iBWiHB5iV9mWFd436',
-  database: 'defaultdb',
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  username: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
 });
 
 // Test the database connection
